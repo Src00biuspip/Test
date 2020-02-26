@@ -1,0 +1,40 @@
+<!--
+Initialize the Store Builder Library
+-->
+<script
+	id="fsc-api"
+	src="https://d1f8f9xcsvx3ha.cloudfront.net/sbl/0.8.2/fastspring-builder.min.js"
+	type="text/javascript"
+	data-storefront="fastspringexamples.test.onfastspring.com/popup-fastspringexamples">
+</script>
+
+<select id="product">
+	<option value="phot-io-main-app">The Phot.io App</option>
+	<option value="photo-io-main-app-free">The Phot.io App Free</option>
+	<option value="photo-io-main-app-physical">The Phot.io App Physical Copy</option>
+	<option value="photo-io-main-app-pro">The Phot.io App Professional</option>
+</select>
+
+<button onclick="addProduct();">Add to Cart</button>
+
+<script>
+	function addProduct()
+	{
+		var e = document.getElementById("product");
+		var product = e.options[e.selectedIndex].value;
+		var s =
+		{
+			//Reset the cart session  to remove everything added to the cart previously.
+			'reset':true,
+			//Define the product path(s) and the quantity to add.
+			'products' : [
+				{
+					'path':product,
+					'quantity': 1
+				}
+			],
+			'checkout': true
+		}
+		fastspring.builder.push(s);
+	}
+</script>

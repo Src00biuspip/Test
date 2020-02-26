@@ -1,11 +1,21 @@
-<!--
+<html><head>
+          <script>
+            (function () {
+              window.addEventListener('DOMContentLoaded', function () {
+                window.parent.postMessage(JSON.stringify({
+                  type: 'jotted-dom-ready'
+                }), '*')
+              })
+            }())
+          </script>
+
+          <style></style>
+        </head>
+        <body>
+          <!--
 Initialize the Store Builder Library
 -->
-<script
-	id="fsc-api"
-	src="https://d1f8f9xcsvx3ha.cloudfront.net/sbl/0.8.2/fastspring-builder.min.js"
-	type="text/javascript"
-	data-storefront="fastspringexamples.test.onfastspring.com/popup-fastspringexamples">
+<script id="fsc-api" src="https://d1f8f9xcsvx3ha.cloudfront.net/sbl/0.8.2/fastspring-builder.min.js" type="text/javascript" data-storefront="fastspringexamples.test.onfastspring.com/popup-fastspringexamples">
 </script>
 
 <select id="product">
@@ -38,3 +48,13 @@ Initialize the Store Builder Library
 		fastspring.builder.push(s);
 	}
 </script>
+
+          <!--
+            Jotted:
+            Empty script tag prevents malformed HTML from breaking the next script.
+          -->
+          <script></script>
+          <script></script>
+        
+      
+    </body></html>
